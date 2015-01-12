@@ -1,9 +1,9 @@
 {
-    "name": "asika/php-code-generator",
-    "description": "PHP Code generator. She is Goddess, she is the Creator.",
-    "type": "php-code-generator",
-    "keywords": ["code", "generator", "builder", "scaffolding", "scaffold"],
-    "homepage": "https://github.com/asika32764/php-code-generator",
+    "name": "asika/muse",
+    "description": "Muse - The PHP Code generator. She is Goddess, she is the Creator.",
+    "type": "framework",
+    "keywords": ["code", "generator", "builder", "scaffolding", "scaffold", "muse"],
+    "homepage": "https://github.com/asika32764/muse",
     "license": "GNU Lesser General Public License",
     "authors": [
         {
