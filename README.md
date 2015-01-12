@@ -1,6 +1,6 @@
 # Muse - The PHP Code Generator
 
-[![Latest Stable Version](https://poser.pugx.org/asika/php-code-generator/v/stable.svg)](https://packagist.org/packages/asika/php-code-generator) [![Total Downloads](https://poser.pugx.org/asika/php-code-generator/downloads.svg)](https://packagist.org/packages/asika/php-code-generator) [![Latest Unstable Version](https://poser.pugx.org/asika/php-code-generator/v/unstable.svg)](https://packagist.org/packages/asika/php-code-generator) [![License](https://poser.pugx.org/asika/php-code-generator/license.svg)](https://packagist.org/packages/asika/php-code-generator)
+[![Latest Stable Version](https://poser.pugx.org/asika/muse/v/stable.svg)](https://packagist.org/packages/asika/muse) [![Total Downloads](https://poser.pugx.org/asika/muse/downloads.svg)](https://packagist.org/packages/asika/muse) [![Latest Unstable Version](https://poser.pugx.org/asika/muse/v/unstable.svg)](https://packagist.org/packages/asika/muse) [![License](https://poser.pugx.org/asika/muse/license.svg)](https://packagist.org/packages/asika/muse)
 
 A powerful php scaffolding framework, help developers generate their code by custom templates.
 
