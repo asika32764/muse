@@ -1,15 +1,15 @@
 <?php
 /**
- * Part of php-code-generator project.
+ * Part of muse project.
  *
- * @copyright  Copyright (C) 2011 - 2014 SMS Taiwan, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2011 - 2015 SMS Taiwan, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
 namespace TemplateTemplate;
 
-use CodeGenerator\IO\IOInterface;
-use CodeGenerator\Template\AbstractTemplate;
+use Muse\IO\IOInterface;
+use Muse\Template\AbstractTemplate;
 use Windwalker\Registry\Registry;
 
 /**
@@ -44,7 +44,7 @@ class TemplateTemplate extends AbstractTemplate
 		$replace['item.cap']   = ucfirst($item);
 
 		// Set project name
-		$replace['project.class'] = 'CodeGenerator';
+		$replace['project.class'] = 'Muse';
 
 		// Set Template name
 		$replace['tmpl.lower'] = strtolower($tmpl);

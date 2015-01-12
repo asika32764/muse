@@ -1,4 +1,4 @@
-# PHP Code Generator
+# Muse - The PHP Code Generator
 
 A powerful php scaffolding framework, help developers generate their code by custom templates.
 
@@ -9,7 +9,7 @@ Add this dependency in your `composer.json`.
 ``` json
 {
     "require": {
-        "asika/php-code-generator": "2.*",
+        "asika/muse": "1.*",
         "windwalker/console": "~2.0"
     }
 }
@@ -18,29 +18,29 @@ Add this dependency in your `composer.json`.
 Or just create a project:
 
 ``` shell
-php composer.phar create-project asika/php-code-generator php-code-generator 2.*
+php composer.phar create-project asika/muse muse 1.*
 ```
 
 ## Getting Started
 
-PHP Code Generator is a command line based program, we will do everything though CLI. Please type:
+Muse is a command line based program, we will do everything though CLI. Please type:
 
 ``` shell
-php bin/generator
+php bin/muse
 ```
 
 You will get this help message:
 
 ```
-PHP Code Generator - version: 2
+Muse - The PHP Code Generator - version: 1
 ------------------------------------------------------------
 
-[generator Help]
+[muse Help]
 
-The default application command
+Muse console application.
 
 Usage:
-  generator <command> [option]
+  muse <command> [option]
 
 
 Options:
@@ -61,24 +61,24 @@ Commands:
 
 ### Generate code by Acme Template
 
-Acme template is a default template in PHP Code Generator, generating code is very easy, please type:
+Acme template is a default template in Muse, generating code is very easy, please type:
 
 ``` bash
-php bin/generator gen acme test/MyApp
+php bin/muse gen acme test/MyApp
 ```
 
 Now you will see message like below:
 
 ``` bash
-$ php bin/generator gen acme test/MyApp
-File created: /var/www/php-code-generator/test/MyApp/admin/article/edit.twig
-File created: /var/www/php-code-generator/test/MyApp/admin/article/index.twig
-File created: /var/www/php-code-generator/test/MyApp/admin/category/edit.twig
-File created: /var/www/php-code-generator/test/MyApp/admin/category/index.twig
-File created: /var/www/php-code-generator/test/MyApp/article.twig
-File created: /var/www/php-code-generator/test/MyApp/global/index.html
-File created: /var/www/php-code-generator/test/MyApp/index.html
-File created: /var/www/php-code-generator/test/MyApp/index.twig
+$ php bin/muse gen acme test/MyApp
+File created: /var/www/muse/test/MyApp/admin/article/edit.twig
+File created: /var/www/muse/test/MyApp/admin/article/index.twig
+File created: /var/www/muse/test/MyApp/admin/category/edit.twig
+File created: /var/www/muse/test/MyApp/admin/category/index.twig
+File created: /var/www/muse/test/MyApp/article.twig
+File created: /var/www/muse/test/MyApp/global/index.html
+File created: /var/www/muse/test/MyApp/index.html
+File created: /var/www/muse/test/MyApp/index.twig
 ```
 
 ### Put your SubTemplate to Acme Template
@@ -88,7 +88,7 @@ Now you can put your code to `src/AcmeTemplate/Template/mytmpl`.
 And using this command to generate your sub template:
 
 ``` bash
-php bin/generator gen acme test/MyApp2 -t mytmpl
+php bin/muse gen acme test/MyApp2 -t mytmpl
 ```
 
 ## Create your project template
@@ -100,16 +100,16 @@ Now everything is very easy, but how can we create our own template? We have to 
 Using this command to init a new template.
 
 ``` bash
-php bin/generator tmpl-init flower
+php bin/muse tmpl-init flower
 ```
 
 ```
-File created: /var/www/php-code-generator/src/FlowerTemplate/Action/ConvertAction.php
-File created: /var/www/php-code-generator/src/FlowerTemplate/Action/CopyAllAction.php
-File created: /var/www/php-code-generator/src/FlowerTemplate/Task/Convert.php
-File created: /var/www/php-code-generator/src/FlowerTemplate/Task/Generate.php
-File created: /var/www/php-code-generator/src/FlowerTemplate/Template/default/DefaultClass.php
-File created: /var/www/php-code-generator/src/FlowerTemplate/FlowerTemplate.php
+File created: /var/www/muse/src/FlowerTemplate/Action/ConvertAction.php
+File created: /var/www/muse/src/FlowerTemplate/Action/CopyAllAction.php
+File created: /var/www/muse/src/FlowerTemplate/Task/Convert.php
+File created: /var/www/muse/src/FlowerTemplate/Task/Generate.php
+File created: /var/www/muse/src/FlowerTemplate/Template/default/DefaultClass.php
+File created: /var/www/muse/src/FlowerTemplate/FlowerTemplate.php
 ```
 
 OK, we created a sample template named `flower`, this template will locate at `src/FlowerTemplate` with an entry class `FlowerTemplate`,
@@ -138,7 +138,7 @@ protected function registerReplaces($io, $replace = array())
     $replace['item.cap']   = ucfirst($item);
 
     // Set project name
-    $replace['project.class'] = 'CodeGenerator';
+    $replace['project.class'] = 'Muse';
 
     return $replace;
 }
@@ -175,10 +175,10 @@ protected function registerConfig($io, $config)
 }
 ```
 
-You can set some useful config in this method, the most important is `path.src` and `path.dest`. These two config tell PHP Code Generator
+You can set some useful config in this method, the most important is `path.src` and `path.dest`. These two config tell Muse
   where code from and where code copied to.
 
-`GENERATOR_PATH` is root path of PHP Code Generator, and the `$io->getArgument(1)` means get second argument of your command(First is 0).
+`GENERATOR_PATH` is root path of Muse, and the `$io->getArgument(1)` means get second argument of your command(First is 0).
 
 ### Task & Action
 
@@ -193,7 +193,7 @@ The `Generate` controller class:
 namespace FlowerTemplate\Task;
 
 use FlowerTemplate\Action;
-use CodeGenerator\Controller\AbstractTaskController;
+use Muse\Controller\AbstractTaskController;
 
 class Generate extends AbstractTaskController
 {
@@ -209,8 +209,8 @@ The `CopyAllAction` class
 ``` php
 namespace FlowerTemplate\Action;
 
-use CodeGenerator\Action\AbstractAction;
-use CodeGenerator\FileOperator\CopyOperator;
+use Muse\Action\AbstractAction;
+use Muse\FileOperator\CopyOperator;
 
 class CopyAllAction extends AbstractAction
 {
@@ -268,7 +268,7 @@ please see: https://github.com/joomla-framework/filesystem
 Simple usage:
 
 ``` php
-namespace CodeGenerator\Filesystem;
+namespace Muse\Filesystem;
 
 Filesystem\Folder::copy($src, $dest);
 Filesystem\Folder::move($src, $dest);
@@ -293,13 +293,13 @@ we will make the process easier in the future.
 
 #### (1) Create a new Command
 
-Create a command class in `src/CodeGenerator/Windwalker/Command/MyTask/MyTask.php`
+Create a command class in `src/Muse/Windwalker/Command/MyTask/MyTask.php`
 
 ``` php
-namespace CodeGenerator\Windwalker\Command\MyTask;
+namespace Muse\Windwalker\Command\MyTask;
 
-use CodeGenerator\Controller\GeneratorController;
-use CodeGenerator\Windwalker\IO;
+use Muse\Controller\GeneratorController;
+use Muse\Windwalker\IO;
 use Joomla\Console\Command\Command;
 
 class MyTask extends Command
@@ -328,7 +328,7 @@ How to use Joomla Console and Command? See: https://github.com/asika32764/joomla
 
 #### (2) Register your command to application
 
-Register this command in `src/CodeGenerator/Windwalker/Application::registerCommands()`
+Register this command in `src/Muse/Windwalker/Application::registerCommands()`
 
 ``` php
 protected function registerCommands()
@@ -367,7 +367,7 @@ Create a class in `src/FlowerTemplate/Task/MyTask.php`
 namespace FlowerTemplate\Task;
 
 use FlowerTemplate\Action;
-use CodeGenerator\Controller\TaskController;
+use Muse\Controller\TaskController;
 
 class MyTask extends TaskController
 {
@@ -385,20 +385,20 @@ Now you can do some actions here.
 Typing this command and you can go into your task controller:
 
 ``` bash
-php bin/generator mytask <arguments>
+php bin/muse mytask <arguments>
 ```
 
 ## Integrate To Your Project or Framework
 
-PHP Code Generator can integrate to any framework instead default Joomla Console Application. Just create an `IO` class
-to help PHP Code Generator input and output some information:
+Muse can be integrate to any framework instead default Joomla Console Application. Just create an `IO` class
+to help Muse input and output some information:
 
 ``` php
-use CodeGenerator\IO\IOInterface;
+use Muse\IO\IOInterface;
 
 class MyIOAdapter implements IOInterface
 {
-    // Implelemt this interface
+    // Implement this interface
 }
 ```
 
