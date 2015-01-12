@@ -1,5 +1,7 @@
 # Muse - The PHP Code Generator
 
+[![Latest Stable Version](https://poser.pugx.org/asika/php-code-generator/v/stable.svg)](https://packagist.org/packages/asika/php-code-generator) [![Total Downloads](https://poser.pugx.org/asika/php-code-generator/downloads.svg)](https://packagist.org/packages/asika/php-code-generator) [![Latest Unstable Version](https://poser.pugx.org/asika/php-code-generator/v/unstable.svg)](https://packagist.org/packages/asika/php-code-generator) [![License](https://poser.pugx.org/asika/php-code-generator/license.svg)](https://packagist.org/packages/asika/php-code-generator)
+
 A powerful php scaffolding framework, help developers generate their code by custom templates.
 
 ## Installation via Composer
@@ -32,7 +34,7 @@ php bin/muse
 You will get this help message:
 
 ```
-Muse - The PHP Code Generator - version: 1
+Muse - The Muse - version: 1
 ------------------------------------------------------------
 
 [muse Help]
@@ -262,8 +264,8 @@ There will be more operator(eg: `databaseOperator`, `gitOperator`) in the future
 
 #### Filesystem
 
-There are three filesystem classes: `Path`, `File` and `Folder`, which extends from Joomla Filesystem package,
-please see: https://github.com/joomla-framework/filesystem
+There are three filesystem classes: `Path`, `File` and `Folder`, which extends from Windwalker Filesystem package,
+please see: https://github.com/ventoviro/windwalker-filesystem
 
 Simple usage:
 
@@ -300,7 +302,7 @@ namespace Muse\Windwalker\Command\MyTask;
 
 use Muse\Controller\GeneratorController;
 use Muse\Windwalker\IO;
-use Joomla\Console\Command\Command;
+use Windwalker\Console\Command\Command;
 
 class MyTask extends Command
 {
@@ -324,7 +326,7 @@ class MyTask extends Command
 }
 ```
 
-How to use Joomla Console and Command? See: https://github.com/asika32764/joomla-framework-console
+How to use Windwalker Console and Command? See: https://github.com/ventoviro/windwalker-console
 
 #### (2) Register your command to application
 
@@ -347,14 +349,9 @@ You will get new help like this:
 ```
 Available commands:
 
-  help            List all arguments and show usage & manual.
-
   gen             Genarate operation.
-
   tmpl-init       Init a new extension.
-
   tmpl-convert    Convert a code folder back to a template.
-
   mytask          Desc of my task.
 
 ```
@@ -390,7 +387,7 @@ php bin/muse mytask <arguments>
 
 ## Integrate To Your Project or Framework
 
-Muse can be integrate to any framework instead default Joomla Console Application. Just create an `IO` class
+Muse can integrate to any framework instead default Windwalker Console Application. Just create an `IO` class
 to help Muse input and output some information:
 
 ``` php
