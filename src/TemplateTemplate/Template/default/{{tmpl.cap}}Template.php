@@ -71,6 +71,11 @@ class {{tmpl.cap}}Template extends AbstractTemplate
 
 		$config['path.src']  = __DIR__ . '/Template/' . $subTemplate;
 		$config['path.dest'] = GENERATOR_PATH . '/' . $dest;
+		
+		if (!is_dir($config['path.dest']))
+		{
+			throw new \RuntimeException($config['path.dest'] . ' is not a dir.');
+		}
 
 		return $config;
 	}
