@@ -11,7 +11,7 @@ namespace Muse\FileOperator;
 use Muse\Filesystem\File;
 use Muse\Filesystem\Path;
 use Muse\IO\IOInterface;
-use Windwalker\String\String;
+use Windwalker\String\SimpleTemplate;
 
 /**
  * Copy Operator
@@ -83,7 +83,7 @@ class CopyOperator extends AbstractFileOperator
 	protected function copyFile($src, $dest, $replace = array())
 	{
 		// Replace dest file name.
-		$dest = String::parseVariable($dest, $replace, $this->tagVariable);
+		$dest = SimpleTemplate::render($dest, $replace, $this->tagVariable);
 
 		if (is_file($dest))
 		{
@@ -92,7 +92,7 @@ class CopyOperator extends AbstractFileOperator
 		else
 		{
 			// Replace content
-			$content = String::parseVariable(file_get_contents($src), $replace, $this->tagVariable);
+			$content = SimpleTemplate::render(file_get_contents($src), $replace, $this->tagVariable);
 
 			if (File::write($dest, $content))
 			{

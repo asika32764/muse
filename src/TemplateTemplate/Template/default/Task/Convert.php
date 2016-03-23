@@ -10,7 +10,6 @@ namespace {{tmpl.cap}}Template\Task;
 
 use {{tmpl.cap}}Template\Action;
 use {{project.class}}\Controller\AbstractTaskController;
-use Windwalker\String\String;
 
 /**
  * Convert Task Controller
@@ -44,7 +43,7 @@ class Convert extends AbstractTaskController
 		// Quote by tag variable
 		foreach ($this->replace as &$replace)
 		{
-			$replace = String::quote($replace, $this->config['tag.variable']);
+			$replace = \Windwalker\String\StringHelper::quote($replace, $this->config['tag.variable']);
 		}
 
 		// Do it now.

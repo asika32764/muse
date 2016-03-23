@@ -10,7 +10,7 @@ namespace AcmeTemplate\Task;
 
 use AcmeTemplate\Action;
 use Muse\Controller\AbstractTaskController;
-use Windwalker\String\String;
+use Windwalker\String\StringHelper;
 
 /**
  * Class AcmeController
@@ -45,7 +45,7 @@ class Convert extends AbstractTaskController
 		// Quote by tag variable
 		foreach ($this->replace as &$replace)
 		{
-			$replace = String::quote($replace, (array) $this->config['tag.variable']);
+			$replace = StringHelper::quote($replace, (array) $this->config['tag.variable']);
 		}
 
 		$this->doAction(new Action\ConvertAction);
