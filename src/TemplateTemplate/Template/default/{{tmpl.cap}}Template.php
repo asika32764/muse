@@ -10,7 +10,7 @@ namespace {{tmpl.cap}}Template;
 
 use {{project.class}}\IO\IOInterface;
 use {{project.class}}\Template\AbstractTemplate;
-use Windwalker\Registry\Registry;
+use Windwalker\Structure\Structure;
 
 /**
  * Template main entry.
@@ -55,8 +55,8 @@ class {{tmpl.cap}}Template extends AbstractTemplate
 	/**
 	 * Register config and path.
 	 *
-	 * @param IOInterface    $io     The IO adapter.
-	 * @param array|Registry $config Config object or array.
+	 * @param IOInterface     $io     The IO adapter.
+	 * @param array|Structure $config Config object or array.
 	 *
 	 * @return  array
 	 */

@@ -9,7 +9,7 @@
 namespace Muse\Template;
 
 use Muse\IO\IOInterface;
-use Windwalker\Registry\Registry;
+use Windwalker\Structure\Structure;
 
 /**
  * Class Template
@@ -108,8 +108,8 @@ abstract class AbstractTemplate
 	/**
 	 * registerConfig
 	 *
-	 * @param IOInterface    $io
-	 * @param array|Registry $config
+	 * @param IOInterface     $io
+	 * @param array|Structure $config
 	 *
 	 * @return  array
 	 */

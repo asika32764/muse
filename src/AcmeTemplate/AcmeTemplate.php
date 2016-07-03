@@ -10,7 +10,7 @@ namespace AcmeTemplate;
 
 use Muse\IO\IOInterface;
 use Muse\Template\AbstractTemplate;
-use Windwalker\Registry\Registry;
+use Windwalker\Structure\Structure;
 
 /**
  * Class AcmeController
@@ -46,8 +46,8 @@ class AcmeTemplate extends AbstractTemplate
 	/**
 	 * registerConfig
 	 *
-	 * @param IOInterface    $io
-	 * @param array|Registry $config
+	 * @param IOInterface     $io
+	 * @param array|Structure $config
 	 *
 	 * @return  array
 	 */

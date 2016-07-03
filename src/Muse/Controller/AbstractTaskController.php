@@ -10,7 +10,7 @@ namespace Muse\Controller;
 
 use Muse\Action\AbstractAction;
 use Muse\IO\IOInterface;
-use Windwalker\Registry\Registry;
+use Windwalker\Structure\Structure;
 
 /**
  * Base controller of task.
@@ -20,7 +20,7 @@ abstract class AbstractTaskController extends AbstractController
 	/**
 	 * Property config.
 	 *
-	 * @var Registry
+	 * @var Structure
 	 */
 	public $config = null;
 
@@ -35,10 +35,10 @@ abstract class AbstractTaskController extends AbstractController
 	 * Constructor.
 	 *
 	 * @param IOInterface $io      IO adapter.
-	 * @param Registry    $config  Config.
+	 * @param Structure   $config  Config.
 	 * @param array       $replace Replacing string array.
 	 */
-	public function __construct(IOInterface $io, Registry $config = null, $replace = array())
+	public function __construct(IOInterface $io, Structure $config = null, $replace = array())
 	{
 		$this->replace = $replace;
 
@@ -90,7 +90,7 @@ abstract class AbstractTaskController extends AbstractController
 	/**
 	 * Get config object.
 	 *
-	 * @return  Registry Config object.
+	 * @return  Structure Config object.
 	 */
 	public function getConfig()
 	{
@@ -100,7 +100,7 @@ abstract class AbstractTaskController extends AbstractController
 	/**
 	 * Set config object
 	 *
-	 * @param   Registry $config Config object.
+	 * @param   Structure $config Config object.
 	 *
 	 * @return  AbstractTaskController  Return self to support chaining.
 	 */

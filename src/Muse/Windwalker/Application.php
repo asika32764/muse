@@ -10,7 +10,7 @@ namespace Muse\Windwalker;
 
 use Windwalker\Console\Console;
 use Windwalker\Console\IO\IOInterface;
-use Windwalker\Registry\Registry;
+use Windwalker\Structure\Structure;
 use Muse\Windwalker\Command;
 
 /**
@@ -50,9 +50,9 @@ class Application extends Console
 	 * Class init.
 	 *
 	 * @param IOInterface $io
-	 * @param Registry    $config
+	 * @param Structure   $config
 	 */
-	public function __construct(IOInterface $io = null, Registry $config = null)
+	public function __construct(IOInterface $io = null, Structure $config = null)
 	{
 		restore_error_handler();
 		set_error_handler(array($this, 'error'));

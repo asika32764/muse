@@ -35,7 +35,7 @@ abstract class AbstractAction
 	/**
 	 * Config.
 	 *
-	 * @var \Windwalker\Registry\Registry
+	 * @var \Windwalker\Structure\Structure
 	 */
 	protected $config;
 

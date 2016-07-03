@@ -10,7 +10,7 @@ namespace TemplateTemplate;
 
 use Muse\IO\IOInterface;
 use Muse\Template\AbstractTemplate;
-use Windwalker\Registry\Registry;
+use Windwalker\Structure\Structure;
 
 /**
  * Template main entry.
@@ -57,8 +57,8 @@ class TemplateTemplate extends AbstractTemplate
 	/**
 	 * Register config and path.
 	 *
-	 * @param IOInterface    $io     The IO adapter.
-	 * @param array|Registry $config Config object or array.
+	 * @param IOInterface     $io     The IO adapter.
+	 * @param array|Structure $config Config object or array.
 	 *
 	 * @throws \InvalidArgumentException
 	 * @return  array

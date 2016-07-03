@@ -9,7 +9,7 @@
 namespace Muse\Controller;
 
 use Muse\IO\IOInterface;
-use Windwalker\Registry\Registry;
+use Windwalker\Structure\Structure;
 
 /**
  * Base controller class.
@@ -27,12 +27,12 @@ abstract class AbstractController implements ControllerInterface
 	 * Instantiate the controller.
 	 *
 	 * @param   IOInterface $io     The Controller object.
-	 * @param   Registry    $config Config
+	 * @param   Structure   $config Config
 	 */
-	public function __construct(IOInterface $io, Registry $config = null)
+	public function __construct(IOInterface $io, Structure $config = null)
 	{
 		$this->io     = $io;
-		$this->config = $config ? : new Registry;
+		$this->config = $config ? : new Structure;
 	}
 
 	/**
