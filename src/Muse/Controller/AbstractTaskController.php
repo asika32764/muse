@@ -15,7 +15,7 @@ use Windwalker\Structure\Structure;
 /**
  * Base controller of task.
  */
-abstract class AbstractTaskController extends AbstractController
+abstract class AbstractTaskController extends AbstractMuseController
 {
 	/**
 	 * Property config.

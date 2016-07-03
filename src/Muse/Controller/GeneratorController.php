@@ -11,7 +11,7 @@ namespace Muse\Controller;
 /**
  * Main entry of Code Generator.
  */
-class GeneratorController extends AbstractController
+class GeneratorController extends AbstractMuseController
 {
 	/**
 	 * Task name.
